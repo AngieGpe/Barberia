@@ -4,4 +4,5 @@ services:
     runtime: dotnet
     plan: free
     buildCommand: "dotnet build -c Release"
-    startCommand: "dotnet run --urls http://0.0.0.0:$PORT"
+    startCommand: "dotnet run --urls http://0.0.0.0:${PORT}"
+
