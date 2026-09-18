@@ -3,5 +3,4 @@ services:
     name: barber
     runtime: docker
     plan: free
-    buildCommand: "dotnet build -c Release"
-    startCommand: "dotnet run --urls http://0.0.0.0:${PORT}"
+    dockerfilePath: ./Dockerfile
