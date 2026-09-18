@@ -9,6 +9,13 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+// Crear la base de datos automáticamente al arrancar
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<barber.Models.BarberiaContext>();
+    db.Database.Migrate();
+}
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -26,4 +33,3 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
-
