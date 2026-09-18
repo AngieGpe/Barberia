@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "Cita agendada";
+}
+
+<style>
+    .confirmacion-page {
+        background-image: url('/images/fondo-barberia.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        padding: 60px 20px 120px 20px;
+    }
+
+    .confirmacion-card {
+        background-color: rgba(250, 245, 238, 0.95);
+        border-radius: 8px;
+        box-shadow: 0 10px 40px rgba(63, 41, 25, 0.4);
+        padding: 50px 45px;
+        max-width: 520px;
+        margin: 0 auto;
+        border: 3px solid #6F4E37;
+        border-top: 8px solid #6F4E37;
+        position: relative;
+        text-align: center;
+    }
+
+    .confirmacion-card::before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        border: 1px solid #D6C6AE;
+        border-radius: 4px;
+        pointer-events: none;
+    }
+
+    .confirmacion-card h1 {
+        font-family: 'Great Vibes', cursive;
+        color: #6F4E37;
+        font-size: 3em;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 0 rgba(214, 198, 174, 0.6);
+    }
+
+    .confirmacion-card .icono {
+        font-size: 3.5em;
+        color: #6F4E37;
+        margin-bottom: 10px;
+    }
+
+    .confirmacion-card p {
+        color: #4A3526;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .btn-inicio {
+        display: inline-block;
+        background-color: #6F4E37 !important;
+        border: 2px solid #5A3E2C !important;
+        color: #fff !important;
+        padding: 14px 35px;
+        border-radius: 4px;
+        font-size: 1em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-decoration: none;
+        margin-top: 25px;
+        box-shadow: 3px 3px 0 #5A3E2C;
+        transition: all 0.3s;
+    }
+
+    .btn-inicio:hover {
+        background-color: #5A3E2C !important;
+        box-shadow: 4px 4px 0 #4A3526;
+        transform: translateY(-2px);
+        color: #fff !important;
+        text-decoration: none;
+    }
+
+    footer {
+        display: none;
+    }
+</style>
+
+<div class="confirmacion-page">
+    <div class="confirmacion-card">
+           <div class="icono">💈</div>
+
+        <h1>¡Cita agendada!</h1>
+        <p>Tu cita se registró con éxito.</p>
+        <p>Te esperamos en R&M BarberShop.</p>
+
+        <a class="btn-inicio" href="/">Volver al inicio</a>
+    </div>
+</div>

@@ -1,0 +1,149 @@
+@model IEnumerable<barber.Models.Servicio>
+
+@{
+    ViewData["Title"] = "Servicios";
+}
+
+<style>
+    .servicios-page {
+        background-image: url('/images/barber-spider.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        padding: 60px 20px 120px 20px;
+    }
+
+    .servicios-card {
+        background-color: rgba(250, 245, 238, 0.95);
+        border-radius: 8px;
+        box-shadow: 0 10px 40px rgba(63, 41, 25, 0.4);
+        padding: 40px 45px;
+        max-width: 700px;
+        margin:  ​0 auto;
+        border:​ 3px solid #6F4E37;
+        border-top:​ 8px solid #6F4E37;
+        position:​ relative;
+    }
+
+    .servicios-card::before {
+        content:​ "";
+        position:​ absolute;
+        top:​ 12px;
+        left:​ 12px;
+        right:​ 12px;
+        bottom:​ 12px;
+        border:​ 1px solid #D6C6AE;
+        border-radius:​ 4px;
+        pointer-events:​ none;
+    }
+
+    .servicios-card h1 {
+        font-family:​ 'Great Vibes', cursive;
+        color:​ #6F4E37;
+        text-align:​ center;
+        font-size:​ 2.8em;
+        margin-bottom:​ 5px;
+        text-shadow:​ 2px 2px 0 rgba(214, 198, 174, 0.6);
+    }
+
+    .servicios-card .subtitulo {
+        text-align:​ center;
+        color:​ #8B6B4A;
+        font-size:​ 0.95em;
+        margin-bottom:​ 25px;
+        font-style:​ italic;
+    }
+
+    .servicios-card table {
+        width:​ 100%;
+        border-collapse:​ collapse;
+        margin-top:​ 10px;
+    }
+
+    .servicios-card th {
+        background-color:​ #6F4E37;
+        color:​ #fff;
+        padding:​ 12px;
+        text-align:​ left;
+        text-transform:​ uppercase;
+        font-size:​ 0.85em;
+        letter-spacing:​ 1px;
+        border:​ 1px solid #5A3E2C;
+    }
+
+    .servicios-card td {
+        padding:​ 12px;
+        border:​ 1px solid #D6C6AE;
+        color:​ #4A3526;
+    }
+
+    .servicios-card tr:nth-child(even) {
+        background-color:​ #F5EFE6;
+    }
+
+    .servicios-card tr:hover {
+        background-color:​ #EADFCE;
+    }
+
+    .btn-agendar {
+    display: block;
+    text-align: center;
+    background-color: #6F4E37 !important;
+    border: 2px solid #5A3E2C !important;
+    color: #fff !important;
+    padding: 14px 40px;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    margin-top: 30px;
+    box-shadow: 3px 3px 0 #5A3E2C;
+    transition: all 0.3s;
+}
+
+.btn-agendar:hover {
+    background-color: #5A3E2C !important;
+    border: 2px solid #4A3526 !important;
+    box-shadow: 4px 4px 0 #4A3526;
+    transform: translateY(-2px);
+    color: #fff !important;
+    text-decoration: none;
+}
+
+
+    .ocultar-pie {
+    display: none;
+}
+
+</style>
+
+<div class="servicios-page">
+    <div class="servicios-card">
+        <h1>Nuestros Servicios</h1>
+        <p class="subtitulo">Muchos estilos, atención de primera</p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Duración</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nombre</td>
+                        <td>$@item.Precio.ToString("F2")</td>
+                        <td>@item.Duracion min</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <a class="btn-agendar" href="/Citas/Create">Agendar mi cita</a>
+    </div>
+</div>

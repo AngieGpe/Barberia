@@ -1,0 +1,170 @@
+@model barber.Models.Cita
+
+@{
+    ViewData["Title"] = "Agendar cita";
+}
+
+<style>
+    .agendar-page {
+    background-image: url('/images/fondo-barberia.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 60px 20px 120px 20px;
+}
+
+
+    .agendar-card {
+        background-color: rgba(250, 245, 238, 0.95);
+        border-radius: 8px;
+        box-shadow: 0 10px 40px rgba(63, 41, 25, 0.4);
+        padding: 40px 45px;
+        max-width: 520px;
+        margin: 0 auto;
+        border: 3px solid #6F4E37;
+        border-top: 8px solid #6F4E37;
+        position: relative;
+    }
+
+    .agendar-card::before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        border: 1px solid #D6C6AE;
+        border-radius: 4px;
+        pointer-events: none;
+    }
+
+    .agendar-card h1 {
+        font-family: 'Great Vibes', cursive;
+        color: #6F4E37;
+        text-align: center;
+        font-size: 2.8em;
+        margin-bottom: 5px;
+        text-shadow:  ​2px 2px 0 rgba(214, 198, 174, 0.6);
+    }
+
+    .agendar-card .subtitulo {
+        text-align: center;
+        color: #8B6B4A;
+        font-size: 0.95em;
+        margin-bottom: 25px;
+        font-style: italic;
+    }
+
+    .agendar-card label {
+        font-weight: 700;
+        color: #4A3526;
+        margin-bottom: 5px;
+        display: block;
+        text-transform: uppercase;
+        font-size: 0.85em;
+        letter-spacing: 1px;
+    }
+
+    .agendar-card .form-control {
+        border-radius: 6px;
+        border: 2px solid #D6C6AE;
+        padding: 10px 14px;
+        background-color: #FFFDF8;
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    .agendar-card .form-control:focus {
+        border-color: #6F4E37;
+        box-shadow: 0 0 0 0.2rem rgba(111, 78, 55, 0.15);
+    }
+
+    .btn-agendar {
+        background-color: #6F4E37;
+        border-color: #6F4E37;
+        color: #fff;
+        padding: 14px 40px;
+        border-radius: 4px;
+        font-size: 1.1em;
+        font-weight: 700;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: all 0.3s;
+        box-shadow: 3px 3px 0 #5A3E2C;
+    }
+
+    .btn-agendar:hover {
+        background-color: #5A3E2C;
+        border-color: #5A3E2C;
+        transform: translateY(-2px);
+        box-shadow: 4px 4px 0 #4A3526;
+    }
+
+    .text-muted {
+        font-size: 0.85em;
+    }
+    footer {
+    display: none;
+}
+
+</style>
+
+<div class="agendar-page">
+    <div class="agendar-card">
+        <h1>Agenda tu cita</h1>
+        <p class="subtitulo">Tu estilo, tu momento — reserva tu lugar</p>
+
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Cliente.Nombre">Tu nombre</label>
+                <input name="NombreCliente" class="form-control" required placeholder="Escribe tu nombre" />
+            </div>
+
+            <div class="form-group" style="margin-top: 15px;">
+                <label asp-for="Cliente.Telefono">Teléfono</label>
+                <input name="TelefonoCliente" class="form-control" required placeholder="Escribe tu teléfono" />
+            </div>
+
+            <div class="form-group" style="margin-top: 15px;">
+                <label asp-for="ServicioId">Servicio</label>
+                <select asp-for="ServicioId" class="form-control" asp-items="ViewBag.ServicioId">
+                    <option value="">-- Selecciona un servicio --</option>
+                </select>
+                <span asp-validation-for="ServicioId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px;">
+                <label asp-for="Fecha">Fecha</label>
+                <input asp-for="Fecha" class="form-control" type="date" min="2026-09-17" />
+                <span asp-validation-for="Fecha" class="text-danger"></span>
+                <small class="text-muted">Atención: solo lunes a sábado.</small>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px;">
+                <label asp-for="Hora">Hora</label>
+                <select asp-for="Hora" class="form-control">
+                    <option value="">-- Elige una hora --</option>
+                    <option value="16:00">4:00 pm</option>
+                    <option value="16:30">4:30 pm</option>
+                    <option value="17:00">5:00 pm</option>
+                    <option value="17:30">5:30 pm</option>
+                    <option value="18:00">6:00 pm</option>
+                    <option value="18:30">6:30 pm</option>
+                    <option value="19:00">7:00 pm</option>
+                    <option value="19:30">7:30 pm</option>
+                </select>
+                <span asp-validation-for="Hora" class="text-danger"></span>
+            </div>
+
+            <div class="form-group text-center" style="margin-top: 25px;">
+                <input type="submit" value="Agendar cita" class="btn btn-primary btn-agendar" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

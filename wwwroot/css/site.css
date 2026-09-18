@@ -1,0 +1,81 @@
+
+:root {
+    --cream-foam: #F5EFE6;
+    --latte-beige: #D6C6AE;
+    --toasted-almond: #B89B7A;
+    --coffee-brown: #6F4E37;
+    --espresso-black: #3B2A20;
+}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@400;500;600&display=swap');
+
+body {
+    background-color: var(--cream-foam);
+    color: var(--espresso-black);
+    font-family: 'Quicksand', 'Segoe UI', Arial, sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Dancing Script', cursive;
+    color: var(--coffee-brown);
+}
+
+body {
+    background-color: var(--cream-foam);
+    color: var(--espresso-black);
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.navbar {
+    background-color: var(--espresso-black) !important;
+}
+
+    .navbar-brand,
+    .navbar a {
+        color: #FFFFFF !important;
+    }
+
+        .navbar a:hover {
+            color: var(--latte-beige) !important;
+        }
+
+.btn-primary {
+    background-color: var(--coffee-brown);
+    border-color: var(--coffee-brown);
+}
+
+    .btn-primary:hover {
+        background-color: var(--toasted-almond);
+        border-color: var(--toasted-almond);
+    }
+
+.btn-danger {
+    background-color: #A0522D;
+    border-color: #A0522D;
+}
+
+h1, h2, h3 {
+    color: var(--coffee-brown);
+}
+
+.table thead {
+    background-color: var(--latte-beige);
+    color: var(--espresso-black);
+}
+
+.table tbody tr:hover {
+    background-color: var(--cream-foam);
+}
+
+.footer {
+    background-color: var(--espresso-black) !important;
+    color: #FFFFFF !important;
+    text-align: center !important;
+    padding: 15px 0 !important;
+    font-size: 1.1em !important;
+}
+
+    .footer a {
+        color: var(--latte-beige) !important;
+        text-decoration: none !important;
+    }
+
