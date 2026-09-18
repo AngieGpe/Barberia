@@ -371,3 +371,5 @@ C:\Users\Angie\source\repos\barber\barber\obj\Debug\net10.0\refint\barber.dll
 C:\Users\Angie\source\repos\barber\barber\obj\Debug\net10.0\barber.pdb
 C:\Users\Angie\source\repos\barber\barber\obj\Debug\net10.0\barber.genruntimeconfig.cache
 C:\Users\Angie\source\repos\barber\barber\obj\Debug\net10.0\ref\barber.dll
+C:\Users\Angie\source\repos\barber\barber\bin\Debug\net10.0\Npgsql.dll
+C:\Users\Angie\source\repos\barber\barber\bin\Debug\net10.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
